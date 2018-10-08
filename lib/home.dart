@@ -6,12 +6,8 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Column(
-      children: <Widget>[
-        Container(
-          child: UpcomingDutiesPanel(),
-        )
-      ],
+    return SafeArea(
+      child: UpcomingDutiesPanel(),
     );
   }
 }

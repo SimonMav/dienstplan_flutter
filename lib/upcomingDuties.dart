@@ -233,6 +233,70 @@ class _UpcomingDutiesPanelState extends State<UpcomingDutiesPanel> {
           );
         },
       ),
+      DutyItem<String>(
+        date: '06.10.2018',
+        time: '18:00 - 06:00',
+        day: 'Samstag',
+        place: 'Kalsdorf',
+        unitType: 'RTW',
+        crew: '',
+        valueToString: (String value) => value,
+        builder: (DutyItem<String> duty) {
+          return Container(
+            child: Builder(
+              builder: (BuildContext context) {
+                return CollapsibleBody(
+                  margin: const EdgeInsets.symmetric(horizontal: 16.0),
+                  child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 16.0,
+                      ),
+                      child: Column(
+                        children: <Widget>[
+                          Row(
+                            children: <Widget>[
+                              Icon(
+                                Icons.location_on,
+                                size: 15.0,
+                                color: Colors.grey,
+                              ),
+                              Expanded(child: Text(duty.place)),
+                              Icon(
+                                Icons.drive_eta,
+                                size: 15.0,
+                                color: Colors.grey,
+                              ),
+                              Expanded(child: Text(duty.unitType)),
+                            ],
+                          ),
+                          Row(
+                            children: <Widget>[
+                              Icon(
+                                Icons.access_time,
+                                size: 15.0,
+                                color: Colors.grey,
+                              ),
+                              Expanded(child: Text(duty.time)),
+                            ],
+                          ),
+                          Row(
+                            children: <Widget>[
+                              Icon(
+                                Icons.people,
+                                size: 15.0,
+                                color: Colors.grey,
+                              ),
+                              Text(duty.crew),
+                            ],
+                          )
+                        ],
+                      )),
+                );
+              },
+            ),
+          );
+        },
+      ),
     ];
   }
 
